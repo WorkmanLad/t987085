@@ -131,10 +131,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleScreen.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Metronome.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleScreen.h" />
     <ClInclude Include="Metronome.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

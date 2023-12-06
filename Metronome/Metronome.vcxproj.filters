@@ -21,9 +21,15 @@
     <ClCompile Include="Metronome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Metronome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
