@@ -10,5 +10,11 @@ int main() {
 
     consoleScreen.Display(metronome);
 
+    metronome.Start();
+
+    int i = 0;
+    while (i < 1000000)
+        ++i;
+
     return 0;
 }
