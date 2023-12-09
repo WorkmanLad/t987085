@@ -3,37 +3,45 @@
 #include <Note.h>
 #include <iostream>
 #include <iomanip>
-using std::wcout, std::cin, std::endl, std::string;
+using std::wcout, std::cin, std::endl, std::basic_string;
 
-Song* ConsoleInput::GetSongInput() {
-    wcout << "Writing a new song\nStart with the lyrics:\n";
-    string lyrics;
-    char phrase[50];
-
-    cin.unsetf(std::ios::skipws);
-    while (cin.getline(phrase, 50)) {
-        lyrics.append(phrase);
-        lyrics.append("\n");
-    }
-
-    //wcout << "\n\nLyrics done. Now the notes\nType the note name, spacebar then it's position. EOF to stop.\n";
-
-    wcout << "Lyrics: \n\n" << lyrics.c_str();
+Song ConsoleInput::GetSongInput() {
+    wcout << "Writing a new song\nStart with the title:\n";
     
-    Song* song = new Song(
-        "Test song for development\nsecond line of the lyrics\nthird line now"
-    );
-    Note* A_Major = new Note("A", 0);
-    Note* E_Minor = new Note("Em", 10);
-    Note* D_Major = new Note("D", 25);
-    Note* G_Minor = new Note("Gm", 37);
-    Note* A_Major2 = new Note("A", 51);
 
-    song->AddNote(A_Major);
-    song->AddNote(E_Minor);
-    song->AddNote(D_Major);
-    song->AddNote(G_Minor);
-    song->AddNote(A_Major2);
+
+    /*wcout << "\n\nLyrics done. Now the notes\nType the note name then it's position. EOF to stop.\n";
+    char noteName[5];
+    int notePos;*/
+
+    //ShowLyricsPositions(lyrics.c_str(), lyrics.size());
+
+    /*cin.setf(std::ios::skipws);
+    while (cin >> noteName >> notePos) {
+        song->AddNote(new Note(noteName, notePos));
+    }*/
+
+    song.AddNote(new Note("A", 0));
+    song.AddNote(new Note("Em", 10));
+    song.AddNote(new Note("D", 25));
+    song.AddNote(new Note("Gm", 37));
+    song.AddNote(new Note("A", 51));
 
     return song;
+}
+
+void ConsoleInput::ShowLyricsPositions(const char* lyrics, int size) {
+    wcout << "\nLyrics:\n" << lyrics << endl;
+    wcout << "Positions:\n0";
+    for (int i = 1; i < size; ++i) {
+        if (lyrics[i - 1] == ' ' || lyrics[i - 1] == '\n')
+            wcout << i;
+        else
+            wcout << ' ';
+
+        if (lyrics[i] == '\n')
+            wcout << '\n';
+    }
+
+    wcout << endl;
 }
