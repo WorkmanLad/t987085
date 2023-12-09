@@ -12,10 +12,9 @@ void ConsoleUI::Display(Song& song) {
 
     string aboveNotes = "";
     vector<string> aboveNotesLines;
-
-    int previousNewLinePos = 0;
     vector<string> lyricsLines;
 
+    int previousNewLinePos = 0;
     int letterCount = 0;
 
     lyrics.append("\n");
@@ -36,7 +35,7 @@ void ConsoleUI::Display(Song& song) {
         if (notes.find(i) != notes.end())
             aboveNotes.append(notes.at(i)->name);
         else
-            aboveNotes.append("_");
+            aboveNotes.append(" ");
     }
 
     int x = 0;
@@ -45,7 +44,6 @@ void ConsoleUI::Display(Song& song) {
     else
         x = lyricsLines.size();
 
-    for (int i = 0; i < x; ++i) {
+    for (int i = 0; i < x; ++i)
         wcout << aboveNotesLines[i].c_str() << lyricsLines[i].c_str() << "\n";
-    }
 }
