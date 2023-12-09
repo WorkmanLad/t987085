@@ -3,8 +3,9 @@ class Song;
 
 class ConsoleInput {
 public:
-    Song GetSongInput();
+    Song CreateSongFromUserInput();
 
 private:
+    const char* GetSongTitle();
     void ShowLyricsPositions(const char*, int);
 };

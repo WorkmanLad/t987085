@@ -2,24 +2,18 @@
 #include <Song.h>
 #include <Note.h>
 #include <iostream>
+#include <fstream>
 #include <iomanip>
-using std::wcout, std::cin, std::endl, std::basic_string;
+#include <string>
+using std::wcout, std::cin, std::endl;
+using std::string, std::getline;
+using std::ofstream, std::ifstream;
 
-Song ConsoleInput::GetSongInput() {
+Song ConsoleInput::CreateSongFromUserInput() {
     wcout << "Writing a new song\nStart with the title:\n";
-    
+    const char* title = GetSongTitle();
 
-
-    /*wcout << "\n\nLyrics done. Now the notes\nType the note name then it's position. EOF to stop.\n";
-    char noteName[5];
-    int notePos;*/
-
-    //ShowLyricsPositions(lyrics.c_str(), lyrics.size());
-
-    /*cin.setf(std::ios::skipws);
-    while (cin >> noteName >> notePos) {
-        song->AddNote(new Note(noteName, notePos));
-    }*/
+    Song song = Song(title, "Test song for development");
 
     song.AddNote(new Note("A", 0));
     song.AddNote(new Note("Em", 10));
@@ -28,6 +22,17 @@ Song ConsoleInput::GetSongInput() {
     song.AddNote(new Note("A", 51));
 
     return song;
+}
+
+const char* ConsoleInput::GetSongTitle() {
+    string title;
+    getline(cin, title);
+
+
+
+    ofstream(title + ".txt");
+
+    return title;
 }
 
 void ConsoleInput::ShowLyricsPositions(const char* lyrics, int size) {
