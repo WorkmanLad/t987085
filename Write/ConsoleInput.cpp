@@ -10,18 +10,7 @@ using std::string, std::getline;
 using std::ofstream, std::ifstream;
 
 Song ConsoleInput::CreateSongFromUserInput() {
-    wcout << "Writing a new song\nStart with the title:\n";
-    const char* title = GetSongTitle();
-
-    Song song = Song(title, "Test song for development");
-
-    song.AddNote(new Note("A", 0));
-    song.AddNote(new Note("Em", 10));
-    song.AddNote(new Note("D", 25));
-    song.AddNote(new Note("Gm", 37));
-    song.AddNote(new Note("A", 51));
-
-    return song;
+    
 }
 
 const char* ConsoleInput::GetSongTitle() {
