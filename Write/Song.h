@@ -1,6 +1,5 @@
 #pragma once
-#include <map>
-using std::map;
+#include "pch.h"
 
 class Note;
 
@@ -12,11 +11,11 @@ public:
 
     const char* GetTitle() const { return _title; }
     const char* GetLyrics() const { return _lyrics; }
-    map<int, Note*> GetNotes() const { return _notes; }
+    notes_type GetNotes() const { return _notes; }
 
 private:
     const char* _title;
     const char* _lyrics;
-    map<int, Note*> _notes;
+    notes_type _notes;
 };
 

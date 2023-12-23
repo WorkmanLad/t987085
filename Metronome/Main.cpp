@@ -1,20 +1,10 @@
 #include <iostream>
-#include <Metronome.h>
-#include <ConsoleScreen.h>
+#include <cmath>
 
 using std::wcout, std::wcin, std::endl;
 
 int main() {
-    Metronome metronome;
-    ConsoleScreen consoleScreen;
-
-    consoleScreen.Display(metronome);
-
-    metronome.Start();
-
-    int i = 0;
-    while (i < 1000000)
-        ++i;
-
+    int i = -10;
+    wcout << i;
     return 0;
 }

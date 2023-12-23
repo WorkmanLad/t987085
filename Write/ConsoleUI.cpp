@@ -1,14 +1,11 @@
+#include "pch.h"
 #include "ConsoleUI.h"
 #include <Song.h>
 #include <Note.h>
-#include <string>
-#include <iostream>
-#include <vector>
-using std::string, std::wcout, std::endl, std::vector;
 
 void ConsoleUI::Display(Song& song) {
     string lyrics = song.GetLyrics();
-    const map<int, Note*> notes = song.GetNotes();
+    const notes_type notes = song.GetNotes();
 
     string aboveNotes = "";
     vector<string> aboveNotesLines;

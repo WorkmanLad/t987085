@@ -141,6 +141,7 @@
     <ClInclude Include="ConsoleInput.h" />
     <ClInclude Include="ConsoleUI.h" />
     <ClInclude Include="Note.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="Song.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

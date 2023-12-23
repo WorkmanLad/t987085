@@ -7,4 +7,3 @@ public:
     int position;
     const char* name;
 };
-
